@@ -31,7 +31,7 @@ const charactersSlice = createSlice({
       .addCase(loadCharacters.fulfilled, (state, action) => {
         const [characters, filter] = action.payload;
         state.status = 'fulfilled';
-        state.filter = filter;
+        state.filter = ['All', ...filter];
         charactersAdapter.setAll(state, characters);
       })
   }

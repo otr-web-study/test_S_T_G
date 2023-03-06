@@ -1,6 +1,12 @@
 .characters-content {
-  background-color: aqua;
   min-height: calc(100% - 90px);
+}
+
+.characters-content__container {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .characters-content__lang {
@@ -19,4 +25,18 @@
   line-height: 41px;
   letter-spacing: 3px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.characters-content__select-container {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.characters-content__select-label {
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  line-height: 20px;
+  color: #212121;
+  margin-right: 18px;
 }

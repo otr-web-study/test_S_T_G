@@ -1,0 +1,25 @@
+.attribute {
+
+}
+
+.attribute__text {
+  margin: 0;
+  height: 36px;
+  width: 36px;
+  font-size: 15px;
+  line-height: 17px;
+  color: #212121;
+  border: 3px solid #212121;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attribute__label {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #4B4B4B;
+  text-align: center;
+}
