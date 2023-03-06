@@ -1,0 +1,20 @@
+.not-found {
+  background-color: #17002F;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.not-found__text {
+  font-size: 700px;
+  line-height: 818px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.not-found__image {
+  width: 690px;
+  height: 623px;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+}

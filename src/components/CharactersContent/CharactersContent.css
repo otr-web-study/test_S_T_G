@@ -1,0 +1,22 @@
+.characters-content {
+  background-color: aqua;
+  min-height: calc(100% - 90px);
+}
+
+.characters-content__lang {
+  margin: 0;
+  padding: 28px 0;
+  text-align: end;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: 'Source Sans Pro';
+}
+
+.characters-content__header {
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 3px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

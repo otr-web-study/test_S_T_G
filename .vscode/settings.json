@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "noreferrer",
+    "swapi",
+    "wookiee"
+  ],
+  "git.ignoreLimitWarning": true,
+  "[javascript]": {
+    "javascript.preferences.quoteStyle":"single",
+  },
+}
