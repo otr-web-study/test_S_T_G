@@ -1,15 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { selectCharactersInfo, selectVisibleCharacters } from './charactersSelectors';
 import { selectControls } from '../controls/controlsSlice';
 import { loadCharacters } from './charactersActions';
 
 export const useCharacters = () => {
+  const [selectedCard, setSelectedCard] = useState(null);
   const dispatch = useDispatch();
   const { status, error, qty } = useSelector(selectCharactersInfo);
   const controls = useSelector(selectControls);
-  const characters = useSelector(state => selectVisibleCharacters(state, controls));
+  const { characters, more } = useSelector(state => selectVisibleCharacters(state, controls));
 
   useEffect(() => {
     if (!qty) {
@@ -17,5 +18,20 @@ export const useCharacters = () => {
     }
   }, [qty, dispatch]);
 
-  return [characters, {status, error, qty}];
+  const handleSelectCard = (id) => {
+    setSelectedCard(id);
+  }
+
+  const handleDetailClose = () => {
+    setSelectedCard(null);
+  }
+
+  return [
+    characters,
+    more,
+    selectedCard,
+    handleSelectCard,
+    handleDetailClose,
+    {status, error, qty},
+  ];
 }

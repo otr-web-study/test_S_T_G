@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../config';
-import { getFieldName, transformCharacter } from '../../utils/apiHelpers';
+import { getServiceFieldName, transformCharacter } from '../../utils/apiHelpers';
 
 export const loadCharacters = createAsyncThunk(
   'characters/load-characters',
@@ -18,15 +18,15 @@ export const loadCharacters = createAsyncThunk(
           return rejectWithValue(`Couldn't fetch ${url}, received ${response.status}`);
         }
         const text = await response.text();
-        const data = JSON.parse(text.replaceAll(getFieldName(lang, 'null'), 'null'));
+        const data = JSON.parse(text.replaceAll(getServiceFieldName(lang, 'null'), 'null'));
 
         res = [
           ...res, 
-          ...data[getFieldName(lang, 'results')].map(item => transformCharacter(lang, item)),
+          ...data[getServiceFieldName(lang, 'results')].map(item => transformCharacter(lang, item)),
         ];
         page++;
         
-        if (!data[getFieldName(lang, 'next')]) {
+        if (!data[getServiceFieldName(lang, 'next')]) {
           page = 0;
         }
       } catch (error) {

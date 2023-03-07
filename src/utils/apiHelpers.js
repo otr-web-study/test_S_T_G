@@ -47,6 +47,13 @@ const fields = {
   }
 };
 
+const gender = {
+  scraanwo: 'male',
+  wwwoscraanwo: 'female',
+  acworcscraakacrcoowaahaowo: 'hermaphrodite',
+  'wh/ra': 'n/a'
+}
+
 const service_fields = {
   next: 'whwokao',
   'null': 'whhuanan',
@@ -59,7 +66,7 @@ export const transformCharacter = (lang, swapiCharacter) => {
     if (field.filter) {
       res.filterField = res[name];
     }
-    if (field.tag) {
+    if (field.tag && res[name]) {
       if (typeof field.tag === 'string') {
         res.tags.push([res[name], field.tag]);
       } else if (field.tag[res[name]]) {
@@ -74,6 +81,14 @@ export const transformCharacter = (lang, swapiCharacter) => {
   return character;
 };
 
-export const getFieldName = (lang, fieldName) => {
+export const getServiceFieldName = (lang, fieldName) => {
   return lang === 'en' ? fieldName : service_fields[fieldName];
+}
+
+export const getFieldName = (lang, fieldName) => {
+  return fields[fieldName][lang].replace('_', ' ');
+}
+
+export const getGender = (lang, value) => {
+  return lang === 'en' ? value : gender[value];
 }

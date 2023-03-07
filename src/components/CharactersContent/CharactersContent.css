@@ -40,3 +40,53 @@
   color: #212121;
   margin-right: 18px;
 }
+
+.characters-content__footer {
+  margin: 40px 0;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.characters-content__btn-lang {
+  position: relative;
+  top: -40px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: #F28F16;
+  background-image: url(../../images/lang.png);
+  background-position: center;
+  background-size: 70px;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1280px) {
+  .characters-content {
+    min-height: calc(100% - 80px);
+  }
+
+  .characters-content__container {
+    min-height: calc(100vh - 80px);
+  }
+
+  .characters-content__btn-lang {
+    right: -30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .characters-content {
+    min-height: calc(100% - 700px);
+  }
+
+  .characters-content__container {
+    min-height: calc(100vh - 70px);
+  }
+
+  .characters-content__btn-lang {
+    right: 0;
+    top: -10px;
+  }
+}

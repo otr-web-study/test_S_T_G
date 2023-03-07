@@ -1,8 +1,8 @@
 import './CharacterAttribute.css';
 
-const CharacterAttribute = ({value, label}) => {
+const CharacterAttribute = ({value, label, detail = false}) => {
   return (
-    <div className='attribute'>
+    <div className={`attribute ${detail ? 'attribute_type_detail' : ''}`}>
       <p className='attribute__text'>
         { value }
       </p>

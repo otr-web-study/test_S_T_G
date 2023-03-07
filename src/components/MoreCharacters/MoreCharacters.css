@@ -1,0 +1,15 @@
+.btn-more {
+  height: 50px;
+  width: 300px;
+  background-color: #F0F0F0; 
+  filter: drop-shadow(4px 4px 4px rgba(33, 33, 33, 0.1));
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@media screen and (max-width: 600px) {
+  .btn-more {
+    width: 100%;
+    max-width: 355px;
+  }
+}

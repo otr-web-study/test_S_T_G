@@ -1,20 +1,32 @@
 .not-found {
   background-color: #17002F;
-  color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
 }
 
-.not-found__text {
-  font-size: 700px;
-  line-height: 818px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 0;
+.not-found__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 98px 82px;
+  background-image: url(../../images/404.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position-x: center;
+  background-position-y: 25%;
 }
 
-.not-found__image {
-  width: 690px;
-  height: 623px;
-  position: absolute;
-  right: 50%;
-  transform: translate(50%);
+.not-found__btn-return {
+  background: #73D677;
+  box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
+}
+
+@media screen and (max-width: 768px) {
+  .not-found__container {
+    background-position-y: 40%;
+  }
 }

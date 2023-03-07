@@ -1,10 +1,29 @@
 .characters-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characters-list__list {
   box-sizing: border-box;
   margin: 0;
-  padding: 30px 0 0;
+  padding: 30px 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 35px;
   row-gap: 45px;
+  align-self: stretch;
+}
+
+@media screen and (max-width: 1100px) {
+  .characters-list__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .characters-list__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

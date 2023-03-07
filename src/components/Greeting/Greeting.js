@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import Container from '../Container';
 import './Greeting.css';
-import image from '../../images/banner1.png'
+import image from '../../images/banner.png'
 
 
 const Greeting = () => (

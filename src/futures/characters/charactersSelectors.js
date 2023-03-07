@@ -7,7 +7,12 @@ export const selectCharactersInfo = (state) => ({
 });
 
 export const selectVisibleCharacters = (state, { filter = 'All', page = 1 }) => {
-  return Object.entries(state.characters.entities).filter(
+  const filtered = Object.entries(state.characters.entities).filter(
     ([_, character]) => (filter === 'All' || character.filterField === filter)
-  ).slice(0, page * COUNT_PER_PAGE).map(([_, character]) => character);
+  );
+
+  return {
+    characters: filtered.slice(0, page * COUNT_PER_PAGE).map(([_, character]) => character),
+    more: filtered.length > page * COUNT_PER_PAGE,
+  }
 }

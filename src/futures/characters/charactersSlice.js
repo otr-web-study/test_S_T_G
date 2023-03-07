@@ -38,3 +38,7 @@ const charactersSlice = createSlice({
 });
 
 export const charactersReducer = charactersSlice.reducer;
+export const { clearCharacters } = charactersSlice.actions;
+export const {
+  selectById: selectCharacterById,
+} = charactersAdapter.getSelectors(state => state.characters);
