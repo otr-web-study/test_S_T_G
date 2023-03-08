@@ -6,7 +6,7 @@ export const useNextPage = () => {
   const { page } = useSelector(selectControls);
 
   const handleClickNext = () => {
-    dispatch(setPage(page + 1));
+    dispatch(setPage(`${parseInt(page) + 1}`));
   }
 
   return [handleClickNext];

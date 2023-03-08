@@ -11,6 +11,13 @@ export const loadCharacters = createAsyncThunk(
     let res = [];
     let page = 1;
     while (page) {
+      //handle error on api side, next pages respond with error: 4, 6, 7
+      //let's omit it
+      if (lang !== 'en' && [4, 6, 7].includes(page)) {
+        page++;
+        continue;
+      }
+
       try {
         const response = await fetch(`${url}page=${page}`);
 
@@ -32,7 +39,6 @@ export const loadCharacters = createAsyncThunk(
       } catch (error) {
         return rejectWithValue(error.message);
       }
-      break;
     }
     const filter = Array.from(new Set(res.map(item => item.filterField)));
     return [res, filter];
